@@ -1,0 +1,1121 @@
+{
+  "metadata": {
+    "title": "国际法知识图谱 - 8大核心问题导向",
+    "description": "基于问题驱动的国际法知识体系重构，涵盖54学时核心内容",
+    "created_time": "2026-01-05",
+    "version": "1.0",
+    "author": "国际法课程组",
+    "course_hours": 54
+  },
+  "nodes": [
+    {
+      "id": "root",
+      "label": "国际法知识图谱",
+      "category": "核心问题",
+      "type": "知识体系",
+      "level": 0,
+      "description": "国际法知识体系的中心枢纽，8大核心问题围绕展开",
+      "properties": {
+        "课程": "国际法",
+        "学时": "54学时",
+        "总体": "基于问题驱动的知识体系重构",
+        "结构": "1个中心+8大核心问题+多层次知识节点"
+      }
+    },
+    {
+      "id": "core_q1",
+      "label": "① 国际法有约束力吗？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "探讨国际法的性质、渊源、基本原则与强行法",
+      "properties": {
+        "课时": "8学时",
+        "整合章节": "第2、3、4章",
+        "核心议题": "国际法的法律效力与约束机制",
+        "思政要点": "中国对国际法发展的贡献"
+      }
+    },
+    {
+      "id": "q1_nature",
+      "label": "国际法的性质",
+      "category": "核心问题",
+      "type": "理论基础",
+      "level": 2,
+      "description": "国际法是法律还是道德倡议？",
+      "properties": {
+        "定义": "调整国际关系的法律规范总和",
+        "法律性质": "具有强制约束力的国际法律",
+        "特征": "主体特殊、无统一立法机构、无统一执行机关",
+        "西方观点": "政策定向说（麦克杜格尔）",
+        "中国观点": "各国协调意志说"
+      }
+    },
+    {
+      "id": "q1_source",
+      "label": "国际法的渊源",
+      "category": "核心问题",
+      "type": "法律形式",
+      "level": 2,
+      "description": "国际法的法律表现形式",
+      "properties": {
+        "主要渊源": "国际条约、国际习惯",
+        "补充渊源": "一般法律原则",
+        "辅助资料": "司法判例、权威学说",
+        "核心文本": "《国际法院规约》第38条",
+        "中国贡献": "和平共处五项原则从双边到普遍原则"
+      }
+    },
+    {
+      "id": "q1_principles",
+      "label": "国际法基本原则",
+      "category": "核心问题",
+      "type": "基本规则",
+      "level": 2,
+      "description": "《联合国宪章》七项原则",
+      "properties": {
+        "原则1": "主权平等",
+        "原则2": "民族自决",
+        "原则3": "禁止使用武力",
+        "原则4": "和平解决争端",
+        "原则5": "不干涉内政",
+        "原则6": "国际合作",
+        "原则7": "善意履行义务",
+        "中国创新": "和平共处五项原则（1953年）"
+      }
+    },
+    {
+      "id": "q1_jus_cogens",
+      "label": "强行法（Jus Cogens）",
+      "category": "核心问题",
+      "type": "最高规范",
+      "level": 2,
+      "description": "不得违反的国际法强制性规范",
+      "properties": {
+        "定义": "国际社会整体接受并公认为不许损抑的规范",
+        "法律依据": "《维也纳条约法公约》第53条",
+        "典型内容": "禁止侵略、禁止种族灭绝、禁止奴隶制",
+        "效力": "任何与之抵触的条约无效",
+        "争议": "强行法的范围和识别标准不统一"
+      }
+    },
+    {
+      "id": "q1_case_cuba",
+      "label": "案例：古巴猪湾事件",
+      "category": "核心问题",
+      "type": "典型案例",
+      "level": 3,
+      "description": "1961年美国策动的政权颠覆行动",
+      "properties": {
+        "时间": "1961年",
+        "事件": "美国支持流亡者入侵古巴",
+        "违反原则": "不干涉内政、禁止使用武力",
+        "教学价值": "揭示西方'合则用，不合则弃'的双重标准",
+        "思政意义": "警惕霸权主义对国际法治的破坏"
+      }
+    },
+    {
+      "id": "core_q2",
+      "label": "② 谁能在国际上说话？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "国际法主体、国家要素与国家权利",
+      "properties": {
+        "课时": "6学时",
+        "整合章节": "第5、6章",
+        "核心议题": "国际法律人格与主体资格",
+        "实践问题": "国家承认、政府继承"
+      }
+    },
+    {
+      "id": "q2_subjects",
+      "label": "国际法主体",
+      "category": "核心问题",
+      "type": "主体资格",
+      "level": 2,
+      "description": "能够享有国际法权利并承担义务的实体",
+      "properties": {
+        "主体类型": "国家、国际组织、正在争取独立的民族",
+        "主体特点": "国家是最基本和最主要的主体",
+        "演变趋势": "个人的国际法律地位逐步提升",
+        "争议主体": "跨国公司、NGO的主体地位"
+      }
+    },
+    {
+      "id": "q2_state_elements",
+      "label": "国家的构成要素",
+      "category": "核心问题",
+      "type": "国家要素",
+      "level": 2,
+      "description": "国家成立的必备条件",
+      "properties": {
+        "要素1": "定居的居民",
+        "要素2": "确定的领土",
+        "要素3": "有效的政府",
+        "要素4": "独立处理对外关系的能力（主权）",
+        "案例分析": "巴勒斯坦、科索沃的国家地位争议"
+      }
+    },
+    {
+      "id": "q2_recognition",
+      "label": "国家承认与继承",
+      "category": "核心问题",
+      "type": "国家关系",
+      "level": 2,
+      "description": "国家间建立正式外交关系的前提",
+      "properties": {
+        "承认理论": "宣告说 vs 构成说",
+        "承认方式": "事实承认 vs 法律承认",
+        "中国实践": "新中国'另起炉灶'外交方针",
+        "国家继承": "领土、条约、债务的继承",
+        "恶债不偿": "中国拒绝承认不平等条约产生的债务"
+      }
+    },
+    {
+      "id": "q2_case_prc",
+      "label": "案例：新中国的'恶债不偿'",
+      "category": "核心问题",
+      "type": "中国实践",
+      "level": 3,
+      "description": "新中国处理旧政权债务的创新做法",
+      "properties": {
+        "历史背景": "1949年前中国积累的庚子赔款等恶债",
+        "法律立场": "区分压迫性债务 vs 正常商业债务",
+        "国际意义": "创新了'恶债'理论，被发展中国家广泛采纳",
+        "对比案例": "苏俄全面拒绝 vs 东欧国家全面承认",
+        "当代启示": "主权平等原则的真正实践"
+      }
+    },
+    {
+      "id": "core_q3",
+      "label": "③ 国家的'地盘'如何界定？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "领土法与海洋法",
+      "properties": {
+        "课时": "12学时",
+        "整合章节": "第8、9章",
+        "核心议题": "领土主权、领海、专属经济区、大陆架",
+        "热点案例": "南海九段线、钓鱼岛、北极争端"
+      }
+    },
+    {
+      "id": "q3_territory",
+      "label": "国家领土",
+      "category": "核心问题",
+      "type": "领土主权",
+      "level": 2,
+      "description": "国家行使完全主权的地理空间",
+      "properties": {
+        "构成": "领陆、领水、领空、底土",
+        "取得方式": "先占、时效、添附、割让",
+        "历史遗留": "中国废除不平等条约收回租界",
+        "边界制度": "陆地边界与海洋划界",
+        "中国经验": "'求同存异''搁置争议'的谈判智慧"
+      }
+    },
+    {
+      "id": "q3_sea_zones",
+      "label": "海洋区域划分",
+      "category": "核心问题",
+      "type": "海洋法",
+      "level": 2,
+      "description": "《联合国海洋法公约》的区域体系",
+      "properties": {
+        "内水": "完全主权",
+        "领海": "12海里，主权延伸",
+        "毗连区": "24海里，有限管辖",
+        "专属经济区": "200海里，资源主权权利",
+        "大陆架": "自然延伸或200海里",
+        "公海": "共同继承遗产",
+        "核心公约": "1982年《联合国海洋法公约》"
+      }
+    },
+    {
+      "id": "q3_eez",
+      "label": "专属经济区（EEZ）",
+      "category": "核心问题",
+      "type": "海洋制度",
+      "level": 2,
+      "description": "沿海国的资源专属权利区域",
+      "properties": {
+        "范围": "从领海基线起200海里",
+        "沿海国权利": "自然资源勘探开发、人工设施建设",
+        "他国权利": "航行自由、飞越自由、铺设电缆管道",
+        "历史演变": "1945年杜鲁门宣言→1982年公约",
+        "利益博弈": "资源国 vs 海洋大国的妥协产物",
+        "中国立场": "从反对到支持，反映海洋权益需求"
+      }
+    },
+    {
+      "id": "q3_eez_disputes",
+      "label": "EEZ的争议问题",
+      "category": "核心问题",
+      "type": "法律争议",
+      "level": 3,
+      "description": "专属经济区制度的三大争议",
+      "properties": {
+        "争议1": "军事活动是否属'航行自由'？",
+        "美国观点": "军事测量属航行自由",
+        "中国观点": "需沿海国同意（2001年南海撞机案）",
+        "争议2": "人工岛能否主张EEZ？",
+        "争议3": "EEZ划界标准（等距离 vs 公平原则）",
+        "案例": "中日东海、中韩黄海划界"
+      }
+    },
+    {
+      "id": "q3_island_regime",
+      "label": "岛屿制度",
+      "category": "核心问题",
+      "type": "海洋法核心",
+      "level": 2,
+      "description": "《海洋法公约》第121条的争议",
+      "properties": {
+        "定义": "四面环水、高潮时高于水面的自然陆地",
+        "岛屿权利": "拥有领海、EEZ、大陆架",
+        "岩礁": "不能维持人类居住或经济生活",
+        "争议焦点": "'本身的'经济生活如何界定？",
+        "核心案例": "南海仲裁案（太平岛）、冲之鸟礁",
+        "中国立场": "太平岛是岛屿，有历史性证据"
+      }
+    },
+    {
+      "id": "q3_case_southchinasea",
+      "label": "案例：南海九段线",
+      "category": "核心问题",
+      "type": "中国实践",
+      "level": 3,
+      "description": "中国的历史性权利主张",
+      "properties": {
+        "法律依据": "历史性权利+先占原则",
+        "九段线起源": "1947年'十一段线'→1953年调整",
+        "历史证据": "《更路簿》等渔民世代使用证据",
+        "国际争议": "2016年南海仲裁案",
+        "中国立场": "不接受、不参与、不承认",
+        "法理批判": "仲裁庭越权管辖、曲解历史性权利",
+        "当代意义": "维护国家核心利益、反对法律霸权"
+      }
+    },
+    {
+      "id": "core_q4",
+      "label": "④ 国家之间如何约定规则？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "条约法",
+      "properties": {
+        "课时": "8学时",
+        "整合章节": "第10章",
+        "核心议题": "条约的缔结、保留、解释、终止",
+        "核心公约": "《维也纳条约法公约》"
+      }
+    },
+    {
+      "id": "q4_treaty_concept",
+      "label": "条约的概念与分类",
+      "category": "核心问题",
+      "type": "条约基础",
+      "level": 2,
+      "description": "国际法最重要的法律渊源",
+      "properties": {
+        "定义": "国家间以国际法为准的书面协议",
+        "名称多样": "条约、公约、协定、宪章、议定书",
+        "分类1": "双边条约 vs 多边条约",
+        "分类2": "造法性条约 vs 契约性条约",
+        "核心法典": "1969年《维也纳条约法公约》",
+        "适用范围": "仅适用于国家间条约"
+      }
+    },
+    {
+      "id": "q4_conclusion",
+      "label": "条约的缔结程序",
+      "category": "核心问题",
+      "type": "条约程序",
+      "level": 2,
+      "description": "从谈判到生效的法律流程",
+      "properties": {
+        "阶段1": "谈判（Negotiation）",
+        "阶段2": "签署（Signature）",
+        "阶段3": "批准（Ratification）",
+        "阶段4": "交换/交存批准书",
+        "阶段5": "生效（Entry into Force）",
+        "缔约权": "国家元首、政府首脑、外交部长",
+        "全权证书": "其他人需出示全权证书"
+      }
+    },
+    {
+      "id": "q4_reservation",
+      "label": "条约保留",
+      "category": "核心问题",
+      "type": "缔约技巧",
+      "level": 2,
+      "description": "国家排除或修改条约条款的声明",
+      "properties": {
+        "定义": "单方面声明以排除或修改某些条款的法律效力",
+        "目的": "平衡国家主权与参与多边条约",
+        "限制": "不得违反条约宗旨和目的",
+        "禁止保留": "条约明文禁止、限定可保留条款",
+        "保留滥用": "过度保留使条约失去意义",
+        "案例": "《种族灭绝罪公约》保留案"
+      }
+    },
+    {
+      "id": "q4_interpretation",
+      "label": "条约的解释",
+      "category": "核心问题",
+      "type": "适用规则",
+      "level": 2,
+      "description": "如何理解条约条款的含义",
+      "properties": {
+        "解释原则": "善意解释、依上下文、符合宗旨和目的",
+        "解释规则": "《维也纳公约》第31-33条",
+        "正式文本": "多语种条约的约文同等作准",
+        "争议解决": "条约用语按通常含义解释",
+        "特殊含义": "缔约方有特殊含义意图时例外",
+        "案例": "中美上海公报的'各表立场'智慧"
+      }
+    },
+    {
+      "id": "q4_termination",
+      "label": "条约的终止与无效",
+      "category": "核心问题",
+      "type": "条约消灭",
+      "level": 2,
+      "description": "条约失去法律效力的情形",
+      "properties": {
+        "终止理由": "履行完毕、期限届满、合意废止",
+        "情势变迁": "根本情势变化可终止（须满足严格条件）",
+        "无效理由": "胁迫、欺诈、贿赂、违反强行法",
+        "部分无效": "无效条款可分离时，其余条款有效",
+        "不平等条约": "中国主张废除清政府被迫签订的条约",
+        "当代启示": "条约必须建立在平等基础上"
+      }
+    },
+    {
+      "id": "q4_case_shanghai",
+      "label": "案例：中美上海公报",
+      "category": "核心问题",
+      "type": "中国智慧",
+      "level": 3,
+      "description": "外交文件的创新形式",
+      "properties": {
+        "时间": "1972年2月28日",
+        "创新之处": "'各表立场'而非统一措辞",
+        "台湾问题": "中方：一个中国；美方：认识到（acknowledge）",
+        "外交智慧": "求同存异、搁置分歧",
+        "国际意义": "为存在分歧的国家建交提供范例",
+        "法律性质": "政治文件，但有法律约束力",
+        "当代价值": "展示中国处理复杂国际关系的智慧"
+      }
+    },
+    {
+      "id": "core_q5",
+      "label": "⑤ 个人在国际法中处于什么位置？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "国际法上的个人",
+      "properties": {
+        "课时": "3学时",
+        "整合章节": "第7章",
+        "核心议题": "国籍、外国人待遇、引渡与庇护",
+        "演变趋势": "个人国际法律地位逐步提升"
+      }
+    },
+    {
+      "id": "q5_nationality",
+      "label": "国籍",
+      "category": "核心问题",
+      "type": "个人身份",
+      "level": 2,
+      "description": "个人与国家的法律纽带",
+      "properties": {
+        "定义": "个人属于某一国家的国民资格",
+        "取得方式": "出生取得（血统、出生地）、入籍取得",
+        "中国原则": "血统主义为主，出生地主义为辅",
+        "双重国籍": "中国不承认双重国籍",
+        "国籍冲突": "积极冲突、消极冲突（无国籍）",
+        "实际联系": "解决双重国籍冲突的原则"
+      }
+    },
+    {
+      "id": "q5_alien_treatment",
+      "label": "外国人待遇",
+      "category": "核心问题",
+      "type": "国际标准",
+      "level": 2,
+      "description": "国家如何对待外国人",
+      "properties": {
+        "国民待遇": "与本国国民同等对待",
+        "最惠国待遇": "不低于给予任何第三国国民的待遇",
+        "国际标准": "国际法规定的最低标准",
+        "外交保护": "国籍国对其国民的保护",
+        "卡尔沃条款": "拉美国家排除外交保护的尝试",
+        "中国实践": "领事保护的发展（从弱到强）"
+      }
+    },
+    {
+      "id": "q5_extradition",
+      "label": "引渡",
+      "category": "核心问题",
+      "type": "刑事合作",
+      "level": 2,
+      "description": "将逃犯移交给请求国审判",
+      "properties": {
+        "定义": "一国将在其境内的外国罪犯移交给有管辖权国家",
+        "法律依据": "引渡条约或互惠原则",
+        "引渡原则": "双重犯罪、本国国民不引渡",
+        "政治犯不引渡": "国际惯例",
+        "死刑犯引渡": "需承诺不判处死刑",
+        "案例": "孟晚舟案、美国要求引渡阿桑奇"
+      }
+    },
+    {
+      "id": "q5_asylum",
+      "label": "庇护",
+      "category": "核心问题",
+      "type": "人权保护",
+      "level": 2,
+      "description": "国家保护外国人免受迫害",
+      "properties": {
+        "定义": "一国对遭受迫害的外国人给予保护",
+        "领土庇护": "在本国领土内提供保护",
+        "外交庇护": "在本国驻外使领馆提供保护（拉美实践）",
+        "政治庇护": "基于政治原因的迫害",
+        "难民地位": "1951年《难民地位公约》",
+        "不推回原则": "不得将难民遣返至危险地区"
+      }
+    },
+    {
+      "id": "core_q6",
+      "label": "⑥ 国家如何跨国交往？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "外交与领事关系法",
+      "properties": {
+        "课时": "6学时",
+        "整合章节": "第11章",
+        "核心议题": "外交特权与豁免、领事保护",
+        "核心公约": "《维也纳外交关系公约》《维也纳领事关系公约》"
+      }
+    },
+    {
+      "id": "q6_diplomatic_organs",
+      "label": "外交机关",
+      "category": "核心问题",
+      "type": "外交组织",
+      "level": 2,
+      "description": "国家对外交往的代表机构",
+      "properties": {
+        "国家元首": "对外代表国家",
+        "政府首脑": "主持外交事务",
+        "外交部长": "负责外交工作",
+        "外交使团": "常驻外国的外交代表机关",
+        "使馆级别": "大使馆、公使馆、代办处",
+        "使馆职能": "代表、谈判、保护、了解情况"
+      }
+    },
+    {
+      "id": "q6_diplomatic_privileges",
+      "label": "外交特权与豁免",
+      "category": "核心问题",
+      "type": "外交核心",
+      "level": 2,
+      "description": "外交人员享有的特殊权利",
+      "properties": {
+        "理论基础": "代表说（主流）vs 职务需要说",
+        "使馆特权": "馆舍不可侵犯、档案文件不可侵犯",
+        "人员特权": "人身不可侵犯、免受民刑事管辖",
+        "豁免范围": "刑事管辖完全豁免、民事有限豁免",
+        "豁免放弃": "派遣国可明示放弃",
+        "豁免滥用": "不得干涉驻在国内政",
+        "案例": "1979年伊朗扣押美国使馆人员案"
+      }
+    },
+    {
+      "id": "q6_consular",
+      "label": "领事关系",
+      "category": "核心问题",
+      "type": "领事制度",
+      "level": 2,
+      "description": "保护本国国民和法人利益",
+      "properties": {
+        "领事职能": "保护本国国民、促进商业往来",
+        "领事特权": "低于外交特权，仅限职务行为",
+        "领事通知": "逮捕本国国民时应通知其领事馆",
+        "领事探视": "有权探视被拘留的本国国民",
+        "中国实践": "领事保护从弱到强的发展历程",
+        "案例": "拉格朗案（美国未履行通知义务）"
+      }
+    },
+    {
+      "id": "q6_case_immunity",
+      "label": "案例：外交豁免的滥用",
+      "category": "核心问题",
+      "type": "现实问题",
+      "level": 3,
+      "description": "如何平衡特权与责任",
+      "properties": {
+        "典型情形": "交通违规、刑事犯罪、间谍活动",
+        "处理方式": "宣布为不受欢迎的人（驱逐）",
+        "不得滥用": "应遵守驻在国法律",
+        "平衡原则": "特权服务于职务，不是法外之地",
+        "中国立场": "严格要求外交人员遵守中国法律",
+        "改革呼声": "限制豁免范围、建立监督机制"
+      }
+    },
+    {
+      "id": "core_q7",
+      "label": "⑦ 国际争端如何解决？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "和平解决争端与武力限制",
+      "properties": {
+        "课时": "5学时",
+        "整合章节": "跨章节综合",
+        "核心议题": "和平解决方法、禁止使用武力、自卫权",
+        "核心文件": "《联合国宪章》第2条、第33条、第51条"
+      }
+    },
+    {
+      "id": "q7_peaceful_settlement",
+      "label": "和平解决国际争端",
+      "category": "核心问题",
+      "type": "解决方法",
+      "level": 2,
+      "description": "不使用武力的争端解决方式",
+      "properties": {
+        "政治方法": "谈判、斡旋、调停、调查、和解",
+        "法律方法": "仲裁、司法解决",
+        "国际法院": "联合国主要司法机关",
+        "管辖权": "需双方同意（争端方同意）",
+        "中国立场": "优先通过双边谈判解决",
+        "案例": "南海争端、中印边界问题"
+      }
+    },
+    {
+      "id": "q7_use_of_force",
+      "label": "禁止使用武力",
+      "category": "核心问题",
+      "type": "强行法规则",
+      "level": 2,
+      "description": "国际法基本原则之一",
+      "properties": {
+        "法律依据": "《联合国宪章》第2条第4款",
+        "禁止内容": "威胁或使用武力侵犯领土完整或政治独立",
+        "例外情形": "自卫权、安理会授权",
+        "侵略定义": "1974年《侵略定义决议》",
+        "西方曲解": "'人道主义干涉''保护责任'",
+        "中国立场": "反对以人权为借口干涉内政"
+      }
+    },
+    {
+      "id": "q7_self_defense",
+      "label": "自卫权",
+      "category": "核心问题",
+      "type": "合法武力",
+      "level": 2,
+      "description": "遭受武力攻击时的反击权利",
+      "properties": {
+        "法律依据": "《联合国宪章》第51条",
+        "个别自卫": "遭受攻击国的单独反击",
+        "集体自卫": "协助遭受攻击的盟友",
+        "条件限制": "必要性、比例性、及时性",
+        "报告义务": "应立即向安理会报告",
+        "预防性自卫": "争议极大，多数国家反对",
+        "案例": "1962年古巴导弹危机、2001年美国反恐战争"
+      }
+    },
+    {
+      "id": "q7_case_nicaragua",
+      "label": "案例：尼加拉瓜案",
+      "category": "核心问题",
+      "type": "经典判例",
+      "level": 3,
+      "description": "国际法院关于使用武力的重要判决",
+      "properties": {
+        "案件名称": "尼加拉瓜诉美国案（1986年）",
+        "事实": "美国支持尼加拉瓜反政府武装",
+        "判决": "美国违反禁止使用武力原则和不干涉原则",
+        "法律意义": "确认习惯国际法中的禁止使用武力规则",
+        "集体自卫": "必须有遭受攻击国的明确请求",
+        "美国拒绝": "美国拒不执行判决，单方面退出案件",
+        "教学价值": "揭示国际法治的现实困境"
+      }
+    },
+    {
+      "id": "core_q8",
+      "label": "⑧ 中国为国际法贡献了什么？",
+      "category": "核心问题",
+      "type": "问题导向",
+      "level": 1,
+      "description": "中国的国际法实践与创新",
+      "properties": {
+        "课时": "6学时",
+        "整合章节": "全课程",
+        "核心议题": "和平共处五项原则、人类命运共同体、中国方案",
+        "思政要点": "理论自信、制度自信、道路自信"
+      }
+    },
+    {
+      "id": "q8_five_principles",
+      "label": "和平共处五项原则",
+      "category": "核心问题",
+      "type": "中国贡献",
+      "level": 2,
+      "description": "中国对国际法的重大贡献",
+      "properties": {
+        "提出时间": "1953年（中印关系原则）",
+        "五项内容": "互相尊重主权和领土完整、互不侵犯、互不干涉内政、平等互利、和平共处",
+        "历史意义": "从双边原则发展为普遍接受的国际法原则",
+        "国际认可": "写入《联合国宪章》精神，被多国宪法采纳",
+        "当代价值": "构建新型国际关系的基础",
+        "与西方差异": "平等协商 vs 霸权主义"
+      }
+    },
+    {
+      "id": "q8_community",
+      "label": "人类命运共同体",
+      "category": "核心问题",
+      "type": "中国智慧",
+      "level": 2,
+      "description": "21世纪的中国国际法理念",
+      "properties": {
+        "提出时间": "2013年",
+        "核心理念": "建设持久和平、普遍安全、共同繁荣、开放包容、清洁美丽的世界",
+        "法理基础": "主权平等、共同利益、全球治理",
+        "实践载体": "'一带一路'倡议",
+        "国际影响": "写入联合国决议",
+        "理论创新": "超越西方'零和博弈'思维",
+        "当代意义": "为全球治理提供中国方案"
+      }
+    },
+    {
+      "id": "q8_border_negotiations",
+      "label": "中国边界谈判经验",
+      "category": "核心问题",
+      "type": "中国实践",
+      "level": 2,
+      "description": "'求同存异''搁置争议'的智慧",
+      "properties": {
+        "成就": "已与14个陆地邻国中的12个解决边界问题",
+        "谈判原则": "平等协商、互谅互让、照顾彼此关切",
+        "求同存异": "搁置分歧、共同开发",
+        "典型案例": "中俄边界、中越边界、中印边界",
+        "法律创新": "不以武力改变边界现状",
+        "对比": "西方殖民遗留的边界冲突频发",
+        "国际意义": "为领土争端和平解决提供范例"
+      }
+    },
+    {
+      "id": "q8_bri",
+      "label": "'一带一路'的国际法意义",
+      "category": "核心问题",
+      "type": "中国实践",
+      "level": 2,
+      "description": "新型国际合作模式",
+      "properties": {
+        "提出时间": "2013年",
+        "法律性质": "非强制性的合作倡议",
+        "核心原则": "共商、共建、共享",
+        "创新之处": "不附加政治条件、尊重主权",
+        "对比": "西方援助附加'民主化''私有化'条件",
+        "争议回应": "债务陷阱论的法理分析",
+        "国际法贡献": "丰富国际经济合作的法律模式"
+      }
+    },
+    {
+      "id": "q8_legal_scholars",
+      "label": "中国国际法先贤",
+      "category": "核心问题",
+      "type": "历史人物",
+      "level": 3,
+      "description": "中国国际法学家的贡献",
+      "properties": {
+        "周鲠生": "中国国际法学奠基人之一",
+        "梅汝璈": "东京审判中国法官，维护正义",
+        "王铁崖": "《国际法》教材权威",
+        "李浩培": "国际法院法官",
+        "历史意义": "在国际舞台为中国发声",
+        "当代启示": "激励学生提升中国话语权"
+      }
+    },
+    {
+      "id": "q8_sovereignty_innovation",
+      "label": "中国的主权观创新",
+      "category": "核心问题",
+      "type": "理论创新",
+      "level": 2,
+      "description": "主权平等的真正实践者",
+      "properties": {
+        "核心观点": "主权平等不仅是形式，更是实质",
+        "恶债不偿": "拒绝不平等条约产生的债务",
+        "不干涉内政": "坚决反对以人权为借口的干涉",
+        "发展权": "发展中国家的集体权利",
+        "对比西方": "西方'主权过时论''人权高于主权'",
+        "中国实践": "在国际组织中为发展中国家代言",
+        "当代价值": "维护国际法治的公平正义"
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source": "root",
+      "target": "core_q8",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q7",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q6",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q5",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q4",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q3",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q2",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "root",
+      "target": "core_q1",
+      "type": "包含",
+      "description": "国际法知识体系的组成部分"
+    },
+    {
+      "source": "core_q1",
+      "target": "q1_nature",
+      "type": "包含",
+      "description": "探讨国际法的法律性质"
+    },
+    {
+      "source": "core_q1",
+      "target": "q1_source",
+      "type": "包含",
+      "description": "分析国际法的法律渊源"
+    },
+    {
+      "source": "core_q1",
+      "target": "q1_principles",
+      "type": "包含",
+      "description": "掌握国际法基本原则"
+    },
+    {
+      "source": "core_q1",
+      "target": "q1_jus_cogens",
+      "type": "包含",
+      "description": "理解强行法的地位"
+    },
+    {
+      "source": "q1_nature",
+      "target": "q1_case_cuba",
+      "type": "案例说明",
+      "description": "双重标准破坏国际法治"
+    },
+    {
+      "source": "q1_principles",
+      "target": "q8_five_principles",
+      "type": "中国贡献",
+      "description": "和平共处五项原则"
+    },
+    {
+      "source": "core_q2",
+      "target": "q2_subjects",
+      "type": "包含",
+      "description": "国际法主体类型"
+    },
+    {
+      "source": "core_q2",
+      "target": "q2_state_elements",
+      "type": "包含",
+      "description": "国家的构成要素"
+    },
+    {
+      "source": "core_q2",
+      "target": "q2_recognition",
+      "type": "包含",
+      "description": "国家承认与继承"
+    },
+    {
+      "source": "q2_recognition",
+      "target": "q2_case_prc",
+      "type": "中国实践",
+      "description": "新中国的恶债不偿原则"
+    },
+    {
+      "source": "q2_case_prc",
+      "target": "q8_sovereignty_innovation",
+      "type": "体现",
+      "description": "中国主权观创新"
+    },
+    {
+      "source": "core_q3",
+      "target": "q3_territory",
+      "type": "包含",
+      "description": "国家领土主权"
+    },
+    {
+      "source": "core_q3",
+      "target": "q3_sea_zones",
+      "type": "包含",
+      "description": "海洋区域划分"
+    },
+    {
+      "source": "core_q3",
+      "target": "q3_eez",
+      "type": "包含",
+      "description": "专属经济区制度"
+    },
+    {
+      "source": "core_q3",
+      "target": "q3_island_regime",
+      "type": "包含",
+      "description": "岛屿制度"
+    },
+    {
+      "source": "q3_eez",
+      "target": "q3_eez_disputes",
+      "type": "延伸",
+      "description": "EEZ争议问题"
+    },
+    {
+      "source": "q3_island_regime",
+      "target": "q3_case_southchinasea",
+      "type": "案例",
+      "description": "南海九段线争议"
+    },
+    {
+      "source": "q3_territory",
+      "target": "q8_border_negotiations",
+      "type": "中国实践",
+      "description": "中国边界谈判经验"
+    },
+    {
+      "source": "core_q4",
+      "target": "q4_treaty_concept",
+      "type": "包含",
+      "description": "条约的概念与分类"
+    },
+    {
+      "source": "core_q4",
+      "target": "q4_conclusion",
+      "type": "包含",
+      "description": "条约的缔结程序"
+    },
+    {
+      "source": "core_q4",
+      "target": "q4_reservation",
+      "type": "包含",
+      "description": "条约保留制度"
+    },
+    {
+      "source": "core_q4",
+      "target": "q4_interpretation",
+      "type": "包含",
+      "description": "条约的解释规则"
+    },
+    {
+      "source": "core_q4",
+      "target": "q4_termination",
+      "type": "包含",
+      "description": "条约的终止与无效"
+    },
+    {
+      "source": "q4_interpretation",
+      "target": "q4_case_shanghai",
+      "type": "案例",
+      "description": "中美上海公报"
+    },
+    {
+      "source": "q4_case_shanghai",
+      "target": "q8_border_negotiations",
+      "type": "体现",
+      "description": "求同存异的外交智慧"
+    },
+    {
+      "source": "core_q5",
+      "target": "q5_nationality",
+      "type": "包含",
+      "description": "国籍制度"
+    },
+    {
+      "source": "core_q5",
+      "target": "q5_alien_treatment",
+      "type": "包含",
+      "description": "外国人待遇"
+    },
+    {
+      "source": "core_q5",
+      "target": "q5_extradition",
+      "type": "包含",
+      "description": "引渡制度"
+    },
+    {
+      "source": "core_q5",
+      "target": "q5_asylum",
+      "type": "包含",
+      "description": "庇护制度"
+    },
+    {
+      "source": "core_q6",
+      "target": "q6_diplomatic_organs",
+      "type": "包含",
+      "description": "外交机关"
+    },
+    {
+      "source": "core_q6",
+      "target": "q6_diplomatic_privileges",
+      "type": "包含",
+      "description": "外交特权与豁免"
+    },
+    {
+      "source": "core_q6",
+      "target": "q6_consular",
+      "type": "包含",
+      "description": "领事关系"
+    },
+    {
+      "source": "q6_diplomatic_privileges",
+      "target": "q6_case_immunity",
+      "type": "案例",
+      "description": "外交豁免的滥用问题"
+    },
+    {
+      "source": "core_q7",
+      "target": "q7_peaceful_settlement",
+      "type": "包含",
+      "description": "和平解决争端"
+    },
+    {
+      "source": "core_q7",
+      "target": "q7_use_of_force",
+      "type": "包含",
+      "description": "禁止使用武力"
+    },
+    {
+      "source": "core_q7",
+      "target": "q7_self_defense",
+      "type": "包含",
+      "description": "自卫权"
+    },
+    {
+      "source": "q7_use_of_force",
+      "target": "q7_case_nicaragua",
+      "type": "经典判例",
+      "description": "尼加拉瓜诉美国案"
+    },
+    {
+      "source": "q7_peaceful_settlement",
+      "target": "q8_border_negotiations",
+      "type": "中国实践",
+      "description": "和平解决边界争端"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_five_principles",
+      "type": "核心贡献",
+      "description": "和平共处五项原则"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_community",
+      "type": "核心贡献",
+      "description": "人类命运共同体"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_border_negotiations",
+      "type": "核心贡献",
+      "description": "边界谈判经验"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_bri",
+      "type": "核心贡献",
+      "description": "'一带一路'倡议"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_legal_scholars",
+      "type": "历史贡献",
+      "description": "中国国际法先贤"
+    },
+    {
+      "source": "core_q8",
+      "target": "q8_sovereignty_innovation",
+      "type": "理论贡献",
+      "description": "主权观创新"
+    },
+    {
+      "source": "q8_community",
+      "target": "q8_bri",
+      "type": "实践载体",
+      "description": "'一带一路'是实践形式"
+    },
+    {
+      "source": "q1_jus_cogens",
+      "target": "q7_use_of_force",
+      "type": "包含关系",
+      "description": "禁止使用武力是强行法"
+    },
+    {
+      "source": "q1_source",
+      "target": "q4_treaty_concept",
+      "type": "渊源之一",
+      "description": "条约是主要渊源"
+    },
+    {
+      "source": "q2_subjects",
+      "target": "q2_state_elements",
+      "type": "前提条件",
+      "description": "国家是最主要主体"
+    },
+    {
+      "source": "q2_state_elements",
+      "target": "q3_territory",
+      "type": "构成要素",
+      "description": "领土是国家要素之一"
+    },
+    {
+      "source": "q5_alien_treatment",
+      "target": "q6_consular",
+      "type": "保护方式",
+      "description": "领事保护外国人"
+    },
+    {
+      "source": "q4_termination",
+      "target": "q2_case_prc",
+      "type": "应用",
+      "description": "新中国废除不平等条约"
+    }
+  ]
+}
