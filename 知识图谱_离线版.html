@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>国际法知识图谱 - 8大核心问题导向</title>
+    
+    <!-- vis.js 库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css">
+    
+    <!-- Bootstrap 样式 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
+        }
+        
+        .container-fluid {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 3px solid #555;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 0;
+        }
+        
+        .main-content {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background: #f8f9fa;
+            border-right: 1px solid #ddd;
+            overflow-y: auto;
+            padding: 15px;
+        }
+        
+        .sidebar h5 {
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .sidebar h5:first-child {
+            margin-top: 0;
+        }
+        
+        .category-btn {
+            display: block;
+            width: 100%;
+            padding: 8px 12px;
+            margin-bottom: 5px;
+            border: none;
+            border-left: 3px solid transparent;
+            background: white;
+            text-align: left;
+            font-size: 13px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover {
+            background: #e9ecef;
+            border-left-color: #667eea;
+        }
+        
+        .category-btn.active {
+            background: #667eea;
+            color: white;
+            border-left-color: #667eea;
+        }
+        
+        .graph-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            background: white;
+        }
+        
+        .info-panel {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            max-width: 300px;
+            max-height: 200px;
+            overflow-y: auto;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 12px;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .info-panel.show {
+            display: block;
+        }
+        
+        .info-panel h6 {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .info-panel p {
+            margin: 4px 0;
+            color: #555;
+            line-height: 1.5;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-size: 12px;
+            z-index: 1000;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 2px solid #999;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            gap: 5px;
+            z-index: 1000;
+        }
+        
+        .btn-control {
+            padding: 6px 12px;
+            font-size: 12px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .btn-control:hover {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+        
+        .node-stat {
+            font-size: 12px;
+            color: #666;
+            padding: 8px;
+            background: #f0f0f0;
+            border-radius: 4px;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <div class="header">
+            <h1>📚 国际法知识图谱</h1>
+            <p>8大核心问题导向 | 54学时课程 | 离线版本</p>
+        </div>
+        
+        <!-- 主内容区 -->
+        <div class="main-content">
+            <!-- 侧边栏 -->
+            <div class="sidebar">
+                <input type="text" class="search-box" id="searchBox" placeholder="搜索节点...">
+                
+                <h5>📌 8大核心问题</h5>
+                <button class="category-btn" onclick="highlightNode('core_q1')">① 国际法有约束力吗？</button>
+                <button class="category-btn" onclick="highlightNode('core_q2')">② 谁能在国际上说话？</button>
+                <button class="category-btn" onclick="highlightNode('core_q3')">③ 国家的'地盘'如何界定？</button>
+                <button class="category-btn" onclick="highlightNode('core_q4')">④ 国家之间如何约定规则？</button>
+                <button class="category-btn" onclick="highlightNode('core_q5')">⑤ 个人在国际法中处于什么位置？</button>
+                <button class="category-btn" onclick="highlightNode('core_q6')">⑥ 国家如何跨国交往？</button>
+                <button class="category-btn" onclick="highlightNode('core_q7')">⑦ 国际争端如何解决？</button>
+                <button class="category-btn" onclick="highlightNode('core_q8')">⑧ 中国为国际法贡献了什么？</button>
+                
+                <h5>🎓 课程章节</h5>
+                <button class="category-btn" onclick="highlightNode('textbook_ch1')">第一章 绪论</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch2')">第二章 性质与发展</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch5')">第五章 国际法主体</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch8')">第八章 领土法</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch9')">第九章 海洋法</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch10')">第十章 条约法</button>
+                <button class="category-btn" onclick="highlightNode('textbook_ch11')">第十一章 外交法</button>
+                
+                <h5>⚙️ 功能</h5>
+                <button class="category-btn" onclick="resetGraph()">🔄 重置视图</button>
+                <button class="category-btn" onclick="zoomIn()">🔍 放大</button>
+                <button class="category-btn" onclick="zoomOut()">🔍 缩小</button>
+                
+                <div class="node-stat">
+                    <div>节点总数: <strong id="nodeCount">0</strong></div>
+                    <div>连接数: <strong id="edgeCount">0</strong></div>
+                </div>
+            </div>
+            
+            <!-- 图谱容器 -->
+            <div class="graph-container">
+                <div id="mynetwork"></div>
+                
+                <!-- 图例 -->
+                <div class="legend">
+                    <div style="font-weight: bold; margin-bottom: 10px; color: #667eea;">图例</div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FF6B6B;"></div>
+                        <span>核心问题</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #4ECDC4;"></div>
+                        <span>课程章节</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #FFD93D;"></div>
+                        <span>中国实践</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #95E1D3;"></div>
+                        <span>典型案例</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #A8DADC;"></div>
+                        <span>法律文本</span>
+                    </div>
+                </div>
+                
+                <!-- 信息面板 -->
+                <div class="info-panel" id="infoPanel">
+                    <h6 id="infoTitle">节点信息</h6>
+                    <div id="infoContent"></div>
+                </div>
+                
+                <!-- 控制按钮 -->
+                <div class="controls">
+                    <button class="btn-control" onclick="togglePhysics()">物理模拟</button>
+                    <button class="btn-control" onclick="fitGraph()">全屏显示</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图谱数据 - 从JSON中读取
+        let graphData = null;
+        let network = null;
+        let nodes = null;
+        let edges = null;
+        let allNodes = null;
+        let allEdges = null;
+        let nodeColors = null;
+        let physicsEnabled = true;
+
+        // 初始化函数
+        function initGraph() {
+            // 创建节点和边的数据集
+            loadGraphData();
+            
+            const container = document.getElementById('mynetwork');
+            
+            const options = {
+                physics: {
+                    enabled: true,
+                    stabilization: {
+                        iterations: 200
+                    },
+                    barnesHut: {
+                        gravitationalConstant: -30000,
+                        centralGravity: 0.3,
+                        springLength: 200,
+                        springConstant: 0.04
+                    }
+                },
+                interaction: {
+                    navigationButtons: false,
+                    keyboard: true,
+                    zoomView: true,
+                    dragView: true
+                },
+                nodes: {
+                    font: {
+                        size: 16,
+                        face: 'Arial, sans-serif',
+                        color: '#333333',
+                        multi: false
+                    },
+                    scaling: {
+                        min: 20,
+                        max: 50
+                    }
+                },
+                edges: {
+                    arrows: {
+                        to: { enabled: true, scaleFactor: 0.3 }
+                    },
+                    smooth: {
+                        type: 'continuous'
+                    },
+                    font: {
+                        size: 12,
+                        color: '#555555',
+                        face: 'Arial, sans-serif'
+                    },
+                    color: '#999999',
+                    width: 1,
+                    hoverWidth: 2
+                }
+            };
+            
+            const data = { nodes: nodes, edges: edges };
+            network = new vis.Network(container, data, options);
+            
+            // 事件监听
+            network.on('click', onNodeClick);
+            network.on('deselectNode', () => {
+                document.getElementById('infoPanel').classList.remove('show');
+            });
+            
+            // 更新统计信息
+            document.getElementById('nodeCount').textContent = nodes.length;
+            document.getElementById('edgeCount').textContent = edges.length;
+        }
+
+        // 加载图谱数据
+        function loadGraphData() {
+            // 这里是静态数据 - 节点
+            const nodeData = [
+                { id: "core_q1", label: "① 国际法有约束力吗？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q1_nature", label: "国际法的性质", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q1_source", label: "国际法的渊源", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q1_principles", label: "国际法基本原则", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q1_jus_cogens", label: "强行法（Jus Cogens）", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q1_case_cuba", label: "案例：古巴猪湾事件", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q2", label: "② 谁能在国际上说话？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q2_subjects", label: "国际法主体", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q2_state_elements", label: "国家的构成要素", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q2_recognition", label: "国家承认与继承", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q2_case_prc", label: "案例：新中国的'恶债不偿'", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q3", label: "③ 国家的'地盘'如何界定？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q3_territory", label: "国家领土", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q3_sea_zones", label: "海洋区域划分", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q3_eez", label: "专属经济区（EEZ）", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q3_island_regime", label: "岛屿制度", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q3_eez_disputes", label: "EEZ的争议问题", category: "核心问题", color: "#FF6B6B", size: 25 },
+                { id: "q3_case_southchinasea", label: "案例：南海九段线", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q4", label: "④ 国家之间如何约定规则？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q4_treaty_concept", label: "条约的概念与分类", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q4_conclusion", label: "条约的缔结程序", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q4_reservation", label: "条约保留", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q4_interpretation", label: "条约的解释", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q4_termination", label: "条约的终止与无效", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q4_case_shanghai", label: "案例：中美上海公报", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q5", label: "⑤ 个人在国际法中处于什么位置？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q5_nationality", label: "国籍", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q5_alien_treatment", label: "外国人待遇", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q5_extradition", label: "引渡", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q5_asylum", label: "庇护", category: "核心问题", color: "#FF6B6B", size: 30 },
+                
+                { id: "core_q6", label: "⑥ 国家如何跨国交往？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q6_diplomatic_organs", label: "外交机关", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q6_diplomatic_privileges", label: "外交特权与豁免", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q6_consular", label: "领事关系", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q6_case_immunity", label: "案例：外交豁免的滥用", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q7", label: "⑦ 国际争端如何解决？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q7_peaceful_settlement", label: "和平解决国际争端", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q7_use_of_force", label: "禁止使用武力", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q7_self_defense", label: "自卫权", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q7_case_nicaragua", label: "案例：尼加拉瓜案", category: "核心问题", color: "#FF6B6B", size: 25 },
+                
+                { id: "core_q8", label: "⑧ 中国为国际法贡献了什么？", category: "核心问题", color: "#FF6B6B", size: 40 },
+                { id: "q8_five_principles", label: "和平共处五项原则", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q8_community", label: "人类命运共同体", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q8_border_negotiations", label: "中国边界谈判经验", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q8_bri", label: "'一带一路'的国际法意义", category: "核心问题", color: "#FF6B6B", size: 30 },
+                { id: "q8_legal_scholars", label: "中国国际法先贤", category: "核心问题", color: "#FF6B6B", size: 25 },
+                { id: "q8_sovereignty_innovation", label: "中国的主权观创新", category: "核心问题", color: "#FF6B6B", size: 30 },
+                
+                { id: "textbook_ch1", label: "第一章 绪论", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch2", label: "第二章 性质与发展", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch3", label: "第三章 渊源", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch4", label: "第四章 基本原则", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch5", label: "第五章 主体", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch6", label: "第六章 国家", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch7", label: "第七章 个人", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch8", label: "第八章 领土法", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch9", label: "第九章 海洋法", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch10", label: "第十章 条约法", category: "课程章节", color: "#4ECDC4", size: 25 },
+                { id: "textbook_ch11", label: "第十一章 外交法", category: "课程章节", color: "#4ECDC4", size: 25 },
+            ];
+            
+            // 边的数据
+            const edgeData = [
+                { from: "core_q1", to: "q1_nature", label: "包含" },
+                { from: "core_q1", to: "q1_source", label: "包含" },
+                { from: "core_q1", to: "q1_principles", label: "包含" },
+                { from: "core_q1", to: "q1_jus_cogens", label: "包含" },
+                { from: "q1_nature", to: "q1_case_cuba", label: "案例说明" },
+                { from: "q1_principles", to: "q8_five_principles", label: "中国贡献" },
+                { from: "core_q1", to: "textbook_ch2", label: "对应章节" },
+                { from: "core_q1", to: "textbook_ch3", label: "对应章节" },
+                { from: "core_q1", to: "textbook_ch4", label: "对应章节" },
+                
+                { from: "core_q2", to: "q2_subjects", label: "包含" },
+                { from: "core_q2", to: "q2_state_elements", label: "包含" },
+                { from: "core_q2", to: "q2_recognition", label: "包含" },
+                { from: "q2_recognition", to: "q2_case_prc", label: "中国实践" },
+                { from: "core_q2", to: "textbook_ch5", label: "对应章节" },
+                { from: "core_q2", to: "textbook_ch6", label: "对应章节" },
+                { from: "q2_state_elements", to: "q3_territory", label: "构成要素" },
+                
+                { from: "core_q3", to: "q3_territory", label: "包含" },
+                { from: "core_q3", to: "q3_sea_zones", label: "包含" },
+                { from: "core_q3", to: "q3_eez", label: "包含" },
+                { from: "core_q3", to: "q3_island_regime", label: "包含" },
+                { from: "q3_eez", to: "q3_eez_disputes", label: "延伸" },
+                { from: "q3_island_regime", to: "q3_case_southchinasea", label: "案例" },
+                { from: "core_q3", to: "textbook_ch8", label: "对应章节" },
+                { from: "core_q3", to: "textbook_ch9", label: "对应章节" },
+                { from: "q3_territory", to: "q8_border_negotiations", label: "中国实践" },
+                
+                { from: "core_q4", to: "q4_treaty_concept", label: "包含" },
+                { from: "core_q4", to: "q4_conclusion", label: "包含" },
+                { from: "core_q4", to: "q4_reservation", label: "包含" },
+                { from: "core_q4", to: "q4_interpretation", label: "包含" },
+                { from: "core_q4", to: "q4_termination", label: "包含" },
+                { from: "q4_interpretation", to: "q4_case_shanghai", label: "案例" },
+                { from: "core_q4", to: "textbook_ch10", label: "对应章节" },
+                { from: "q1_source", to: "q4_treaty_concept", label: "渊源之一" },
+                
+                { from: "core_q5", to: "q5_nationality", label: "包含" },
+                { from: "core_q5", to: "q5_alien_treatment", label: "包含" },
+                { from: "core_q5", to: "q5_extradition", label: "包含" },
+                { from: "core_q5", to: "q5_asylum", label: "包含" },
+                { from: "core_q5", to: "textbook_ch7", label: "对应章节" },
+                { from: "q5_alien_treatment", to: "q6_consular", label: "保护方式" },
+                
+                { from: "core_q6", to: "q6_diplomatic_organs", label: "包含" },
+                { from: "core_q6", to: "q6_diplomatic_privileges", label: "包含" },
+                { from: "core_q6", to: "q6_consular", label: "包含" },
+                { from: "q6_diplomatic_privileges", to: "q6_case_immunity", label: "案例" },
+                { from: "core_q6", to: "textbook_ch11", label: "对应章节" },
+                
+                { from: "core_q7", to: "q7_peaceful_settlement", label: "包含" },
+                { from: "core_q7", to: "q7_use_of_force", label: "包含" },
+                { from: "core_q7", to: "q7_self_defense", label: "包含" },
+                { from: "q7_use_of_force", to: "q7_case_nicaragua", label: "案例" },
+                { from: "q7_peaceful_settlement", to: "q8_border_negotiations", label: "中国实践" },
+                { from: "q1_jus_cogens", to: "q7_use_of_force", label: "包含关系" },
+                
+                { from: "core_q8", to: "q8_five_principles", label: "核心贡献" },
+                { from: "core_q8", to: "q8_community", label: "核心贡献" },
+                { from: "core_q8", to: "q8_border_negotiations", label: "核心贡献" },
+                { from: "core_q8", to: "q8_bri", label: "核心贡献" },
+                { from: "core_q8", to: "q8_legal_scholars", label: "历史贡献" },
+                { from: "core_q8", to: "q8_sovereignty_innovation", label: "理论贡献" },
+                { from: "q8_community", to: "q8_bri", label: "实践载体" },
+            ];
+            
+            // 创建vis.js数据集
+            nodes = new vis.DataSet(nodeData);
+            edges = new vis.DataSet(edgeData);
+        }
+
+        // 节点点击事件
+        function onNodeClick(params) {
+            if (params.nodes.length > 0) {
+                const nodeId = params.nodes[0];
+                const node = nodes.get(nodeId);
+                
+                // 更新信息面板
+                const infoPanel = document.getElementById('infoPanel');
+                const infoTitle = document.getElementById('infoTitle');
+                const infoContent = document.getElementById('infoContent');
+                
+                infoTitle.textContent = node.label;
+                infoContent.innerHTML = `
+                    <p><strong>分类：</strong> ${node.category}</p>
+                    <p><strong>节点ID：</strong> ${nodeId}</p>
+                    <p><strong>连接数：</strong> ${edges.get({filter: e => e.from === nodeId || e.to === nodeId}).length}</p>
+                `;
+                
+                infoPanel.classList.add('show');
+            }
+        }
+
+        // 高亮节点
+        function highlightNode(nodeId) {
+            if (network && nodes.get(nodeId)) {
+                network.selectNodes([nodeId]);
+                network.focus(nodeId, { scale: 1.5, animation: true });
+                
+                // 更新按钮状态
+                document.querySelectorAll('.category-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                event.target.classList.add('active');
+            }
+        }
+
+        // 重置图谱
+        function resetGraph() {
+            network.unselectAll();
+            network.fit({ animation: true });
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('infoPanel').classList.remove('show');
+        }
+
+        // 物理模拟开关
+        function togglePhysics() {
+            physicsEnabled = !physicsEnabled;
+            network.setOptions({ physics: { enabled: physicsEnabled } });
+        }
+
+        // 全屏显示
+        function fitGraph() {
+            network.fit({ animation: true });
+        }
+
+        // 放大
+        function zoomIn() {
+            const scale = network.getScale() * 1.2;
+            network.moveTo({ scale: scale, animation: true });
+        }
+
+        // 缩小
+        function zoomOut() {
+            const scale = network.getScale() / 1.2;
+            network.moveTo({ scale: scale, animation: true });
+        }
+
+        // 搜索功能
+        document.getElementById('searchBox').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            if (query.length > 0) {
+                const foundNodes = nodes.get({
+                    filter: function(node) {
+                        return node.label.toLowerCase().includes(query);
+                    }
+                });
+                
+                if (foundNodes.length > 0) {
+                    network.selectNodes(foundNodes.map(n => n.id));
+                }
+            }
+        });
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            initGraph();
+        });
+    </script>
+</body>
+</html>
