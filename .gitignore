@@ -1,0 +1,12 @@
+# 临时文件
+temp_graph.html
+interactions_log.json
+
+# Python 缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE 配置
+.vscode/
+.idea/
